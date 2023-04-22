@@ -1,0 +1,6 @@
+bin/
+obj/
+src/packages/
+/src/NetOneEmployeesApp/NetOneEmployeesApp.Web.csproj.user
+/src/.vs
+/src/.vs/NetOneEmployeesApp/config/applicationhost.config
