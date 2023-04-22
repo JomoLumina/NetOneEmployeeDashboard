@@ -215,6 +215,7 @@ const EmployeeAddForm: FC<EmployeeAddFormProps> = ({
                     fullWidth
                     helperText={touched.nrcNumber && errors.nrcNumber}
                     label="NRC number"
+                    placeholder="XXXXXX/XX/X"
                     name="nrcNumber"
                     required
                     onBlur={handleBlur}

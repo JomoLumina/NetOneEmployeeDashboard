@@ -262,6 +262,7 @@ const EmployeeEditForm: FC<EmployeeEditFormProps> = ({
                     helperText={touched.nrcNumber && errors.nrcNumber}
                     label="NRC number"
                     name="nrcNumber"
+                    placeholder="XXXXXX/XX/X"
                     required
                     onBlur={handleBlur}
                     onChange={handleChange}
@@ -276,7 +277,7 @@ const EmployeeEditForm: FC<EmployeeEditFormProps> = ({
                     label="Date of birth"
                     placeholder="DD/MM/YYYY"
                     name="dateOfBirth"
-                    disabled
+                    // disabled
                     onBlur={handleBlur}
                     onChange={handleChange}
                     required
