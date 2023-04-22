@@ -64,3 +64,4 @@ export const THEMES = {
 };
 
 export const PHONE_NUMBER_REGEX = /^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,3})|(\(?\d{2,3}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$/
+export const NRC_NUMBER_REGEX = /^\d{6}\/\d{2}\/\d{1}$/
