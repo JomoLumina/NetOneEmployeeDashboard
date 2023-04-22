@@ -23,7 +23,7 @@ const EmployeesTable: FC<EmployeesTableProps> = ({paginatedEmployees}) => (
           <TableHead>
             <TableRow>
               <TableCell>
-                Id
+                ID
               </TableCell>
               <TableCell>
                 Name
@@ -32,16 +32,16 @@ const EmployeesTable: FC<EmployeesTableProps> = ({paginatedEmployees}) => (
                 Surname
               </TableCell>
               <TableCell>
-                Nrc number
+                NRC number
               </TableCell>
               <TableCell>
                 Gender
               </TableCell>
               <TableCell>
-                Date of Birth
+                Date of birth
               </TableCell>
               <TableCell>
-                Marital Status
+                Marital status
               </TableCell>
               <TableCell align="right">
                 Actions
