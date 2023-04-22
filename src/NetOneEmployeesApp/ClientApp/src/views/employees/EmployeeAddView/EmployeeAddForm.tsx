@@ -11,7 +11,9 @@ import {
   FormControl, InputLabel, MenuItem, OutlinedInput, Select, Typography
 } from "@material-ui/core";
 import axios from "axios";
-import { GENDERS, MARITAL_STATUSES, PHONE_NUMBER_REGEX } from "src/constants";
+import { 
+  GENDERS, MARITAL_STATUSES, PHONE_NUMBER_REGEX, NRC_NUMBER_REGEX, DATE_REGEX 
+} from "src/constants";
 
 interface EmployeeAddFormProps {
   className?: string;
@@ -76,30 +78,30 @@ const EmployeeAddForm: FC<EmployeeAddFormProps> = ({
   return (
     <Formik
       initialValues={{
-        name: "Jomo",
-        surname: "Lumina",
-        nrcNumber: "12391 ",
-        dateOfBirth: "12313",
-        gender: "Male",
-        maritalStatus: "Single",
-        contactDetailsPhoneNumber: "213132",
-        contactDetailsPhoneNumberAlt: "213123",
-        contactDetailsEmailAddress: "alda@gmail.com",
-        contactDetailsPhysicalAddress: "12312wqdqwd",
-        employmentDetailsEmpId: "asdsa",
-        employmentDetailsTitle: "21312",
-        employmentDetailsDepartment: "dadasd",
-        employmentDetailsSupervisor: "qweqe",
-        emergencyContactDetailsName: "adasds",
-        emergencyContactDetailsPhoneNumber: "23131",
-        emergencyContactDetailsPhysicalAddress: "asdasdasdad",
+        name: "",
+        surname: "",
+        nrcNumber: "",
+        dateOfBirth: "",
+        gender: "",
+        maritalStatus: "",
+        contactDetailsPhoneNumber: "",
+        contactDetailsPhoneNumberAlt: "",
+        contactDetailsEmailAddress: "",
+        contactDetailsPhysicalAddress: "",
+        employmentDetailsEmpId: "",
+        employmentDetailsTitle: "",
+        employmentDetailsDepartment: "",
+        employmentDetailsSupervisor: "",
+        emergencyContactDetailsName: "",
+        emergencyContactDetailsPhoneNumber: "",
+        emergencyContactDetailsPhysicalAddress: "",
         submit: null
       }}
       validationSchema={Yup.object().shape({
         name: Yup.string().required("Name is required."),
         surname: Yup.string().required("Surname is required."),
-        nrcNumber: Yup.string().required("NRC number is required."),
-        dateOfBirth: Yup.string().required("Date of birth is required."),
+        nrcNumber: Yup.string().matches(NRC_NUMBER_REGEX, 'NRC number is not valid').required("NRC number is required."),
+        dateOfBirth: Yup.string().matches(DATE_REGEX, 'Date of birth is not valid').required("Date of birth is required."),
         contactDetailsPhoneNumber: Yup.string().matches(PHONE_NUMBER_REGEX, 'Phone number is not valid').required("Phone number is required."),
         contactDetailsPhoneNumberAlt: Yup.string().matches(PHONE_NUMBER_REGEX, 'Phone number is not valid').nullable(),
         contactDetailsEmailAddress: Yup.string().required("Email address is required.").email("Email address must be a valid email."),
@@ -226,6 +228,7 @@ const EmployeeAddForm: FC<EmployeeAddFormProps> = ({
                     fullWidth
                     helperText={touched.dateOfBirth && errors.dateOfBirth}
                     label="Date of birth"
+                    placeholder="DD/MM/YYYY"
                     name="dateOfBirth"
                     onBlur={handleBlur}
                     onChange={handleChange}

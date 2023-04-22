@@ -18,7 +18,9 @@ import {
 import axios from "axios";
 import useIsMountedRef from "src/hooks/useIsMountedRef";
 import type { Employee } from "src/types/employee";
-import { GENDERS, MARITAL_STATUSES, PHONE_NUMBER_REGEX, NRC_NUMBER_REGEX } from "src/constants";
+import {
+   GENDERS, MARITAL_STATUSES, PHONE_NUMBER_REGEX, NRC_NUMBER_REGEX, DATE_REGEX
+} from "src/constants";
 
 interface EmployeeEditFormProps {
   className?: string;
@@ -129,7 +131,7 @@ const EmployeeEditForm: FC<EmployeeEditFormProps> = ({
         name: Yup.string().required("Name is required."),
         surname: Yup.string().required("Surname is required."),
         nrcNumber: Yup.string().matches(NRC_NUMBER_REGEX, 'NRC number is not valid').required("NRC number is required."),
-        dateOfBirth: Yup.string().required("Date of birth is required."),
+        dateOfBirth: Yup.string().matches(DATE_REGEX, 'Date of birth is not valid').required("Date of birth is required."),
         contactDetailsPhoneNumber: Yup.string().matches(PHONE_NUMBER_REGEX, 'Phone number is not valid').required("Phone number is required."),
         contactDetailsPhoneNumberAlt: Yup.string().matches(PHONE_NUMBER_REGEX, 'Phone number is not valid').nullable(),
         contactDetailsEmailAddress: Yup.string().required("Email address is required.").email("Email address must be a valid email."),
@@ -272,7 +274,9 @@ const EmployeeEditForm: FC<EmployeeEditFormProps> = ({
                     fullWidth
                     helperText={touched.dateOfBirth && errors.dateOfBirth}
                     label="Date of birth"
+                    placeholder="DD/MM/YYYY"
                     name="dateOfBirth"
+                    disabled
                     onBlur={handleBlur}
                     onChange={handleChange}
                     required
