@@ -406,6 +406,7 @@ const EmployeeEditForm: FC<EmployeeEditFormProps> = ({
                     name="employmentDetailsEmpId"
                     onBlur={handleBlur}
                     onChange={handleChange}
+                    required
                     value={values.employmentDetailsEmpId}
                     variant="outlined"/>
                 </Grid>
@@ -418,6 +419,7 @@ const EmployeeEditForm: FC<EmployeeEditFormProps> = ({
                     name="employmentDetailsDepartment"
                     onBlur={handleBlur}
                     onChange={handleChange}
+                    required
                     value={values.employmentDetailsDepartment}
                     variant="outlined"/>
                 </Grid>
@@ -460,6 +462,7 @@ const EmployeeEditForm: FC<EmployeeEditFormProps> = ({
                     name="emergencyContactDetailsPhoneNumber"
                     onBlur={handleBlur}
                     onChange={handleChange}
+                    required
                     value={values.emergencyContactDetailsPhoneNumber}
                     variant="outlined"/>
                 </Grid>
@@ -472,6 +475,7 @@ const EmployeeEditForm: FC<EmployeeEditFormProps> = ({
                     name="emergencyContactDetailsPhysicalAddress"
                     onBlur={handleBlur}
                     onChange={handleChange}
+                    required
                     value={values.emergencyContactDetailsPhysicalAddress}
                     variant="outlined"/>
                 </Grid>

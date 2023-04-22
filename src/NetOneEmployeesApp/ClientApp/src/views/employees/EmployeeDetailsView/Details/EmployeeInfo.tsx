@@ -206,7 +206,7 @@ const EmployeeInfo: FC<EmployeeInfoProps> = ({
                   </TableRow>
                   <TableRow>
                     <TableCell className={classes.fontWeightMedium}>
-                      Employee number
+                      Employee ID
                     </TableCell>
                     <TableCell>
                       <Typography variant="body2"color="textSecondary">
